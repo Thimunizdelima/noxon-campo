@@ -34,6 +34,11 @@ Todos ficam em `/rest/v1/<tabela>` e aceitam `GET`, `POST`, `PATCH` e `DELETE` c
 | `acoes_realizadas` | Ações (`data`, `tipo_visita` revenda/campo, `revenda`, `propriedade`, `cidade`, `uf`, `atividades[]`, `produtos[]`, `valor`, `venda_tipo` C/B/PT, `comentario_gestor`) |
 | `v_acoes` | Ações com nome do vendedor, mês e região (para relatórios) |
 | `v_visitas` | Visitas com nome do vendedor, período e regional |
+| `metas` | Metas de venda (`vendedor_id` vazio = equipe, `granularidade`, `inicio`, `fim`, `valor`) |
+
+## Painel de avaliação
+
+A aba **Painel** do app mostra vendas, % da meta atingido e quanto falta, com avaliação diária, semanal, quinzenal, mensal, bimestral, trimestral, semestral ou anual e escolha do mês. O campo META é salvo na tabela `metas`: o vendedor define a própria meta; o gestor define a de cada vendedor e a da equipe.
 
 ## Exemplos
 

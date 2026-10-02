@@ -120,6 +120,61 @@ button{cursor:pointer}
 .note{font-size:12px;color:var(--muted);margin:10px 2px 0}
 @media (max-width:380px){.cellrow{grid-template-columns:88px 1fr}.top img{width:104px}}
 @media (prefers-reduced-motion:no-preference){.drawer{animation:up .18s ease-out}@keyframes up{from{transform:translateY(24px);opacity:.6}}}
+/* ---- Painel ---- */
+:root{--serie:#009c94;--serie-soft:rgba(0,156,148,.14);--good:#0a7f0a;--warn:#9a6a00;--crit:#c0262b}
+.pf{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pf label{flex:1 1 140px;display:flex;flex-direction:column;gap:3px;font-family:var(--sheet);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;min-width:0}
+.pf label[hidden]{display:none}
+.pf select,.pf input{font-family:var(--cell);font-size:14px;font-weight:400;letter-spacing:0;text-transform:none;border:1px solid var(--line);background:var(--paper);padding:9px 6px;width:100%;min-height:40px}
+.bar small{font-family:var(--cell)}
+.metaBox{background:var(--yellow-soft);border:1px solid var(--line);border-top:0;padding:10px 12px}
+.metaIn{display:flex;flex-direction:column;gap:6px;font-family:var(--sheet);font-weight:700;font-size:13px;letter-spacing:.06em}
+.metaIn small{font-weight:400;letter-spacing:0;text-transform:none;font-family:var(--cell);font-size:12px}
+.money.big{background:var(--paper);border:2px solid var(--line);padding:4px 10px}
+.money.big span{font-size:18px;font-family:var(--cell);letter-spacing:0}
+.money.big input{font-size:24px;font-weight:700;border:0;width:100%;padding:6px 0;background:transparent;font-variant-numeric:tabular-nums;letter-spacing:0}
+.metaHint{margin:6px 0 0;font-size:12px;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));background:var(--paper);border:1px solid var(--line);border-top:0}
+.kpis.small{margin-top:10px;border-top:1px solid var(--line)}
+.kpi{padding:10px;border-bottom:1px solid var(--line);min-width:0}
+.kpi:nth-child(odd):not(.wide){border-right:1px solid var(--line)}
+.kpi.wide{grid-column:1/-1}
+.kpi.wide + .kpi:not(.wide){border-right:1px solid var(--line)}
+.kpi.wide + .kpi:not(.wide) + .kpi:not(.wide){border-right:0}
+.kpi dt{font-family:var(--sheet);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.kpi dd{margin:4px 0 0;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.kpis .kpi.wide:first-child dd{font-size:30px}
+.kpi small{color:var(--muted);font-size:12px}
+.kpis.small dd{font-size:18px}
+.prog .track{position:relative;height:16px;background:#e6ecef;border:1px solid var(--line)}
+.prog .fill{position:absolute;inset:0 auto 0 0;background:var(--serie);border-radius:0 4px 4px 0}
+.prog .exp{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink)}
+.progLeg{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:4px;gap:8px}
+.stRow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.st{font-size:13px;font-weight:700;padding:3px 8px;border:1px solid currentColor}
+.st.good{color:var(--good)}.st.warn{color:var(--warn)}.st.crit{color:var(--crit)}.st.neutral{color:var(--muted)}
+.perday{font-size:13px}
+.chart{position:relative;background:var(--paper);border:1px solid var(--line);border-top:0;padding:8px 8px 4px}
+.chart svg{display:block;width:100%;height:auto;touch-action:pan-y}
+.chart .grid{stroke:#e3e8eb;stroke-width:1}
+.chart .ax{fill:var(--muted);font-size:11px;font-family:var(--cell)}
+.chart .line{fill:none;stroke:var(--serie);stroke-width:2;stroke-linejoin:round}
+.chart .area{fill:var(--serie-soft)}
+.chart .end{fill:var(--serie);stroke:var(--paper);stroke-width:2}
+.chart .metaLine{stroke:var(--ink);stroke-width:1.5;stroke-dasharray:6 4}
+.chart .metaLab{fill:var(--ink);font-size:12px;font-weight:700;font-family:var(--cell)}
+.chart .cross{stroke:var(--muted);stroke-width:1}
+.chart .legend{margin:2px 4px 4px}
+.tip{position:absolute;top:8px;width:150px;background:var(--ink);color:#fff;font-size:12px;padding:6px 8px;pointer-events:none;line-height:1.4}
+.rank{background:var(--paper);border:1px solid var(--line);border-top:0;padding:6px 8px}
+.rk{display:grid;grid-template-columns:minmax(0,40%) 1fr auto;gap:8px;align-items:center;padding:5px 0;border-bottom:1px dotted var(--hair)}
+.rk:last-child{border-bottom:0}
+.rkL{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rkB{height:12px;background:#eef2f4}
+.rkB i{display:block;height:100%;background:var(--serie);border-radius:0 4px 4px 0}
+.rkV{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.empty{background:var(--paper);border:1px solid var(--line);border-top:0;padding:12px;color:var(--muted);font-size:14px}
+.tabs button{font-size:12.5px}
 .recbar{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;margin-top:8px}
 .rb-l{flex:1 1 180px;display:flex;flex-direction:column;gap:3px;font-family:var(--sheet);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;min-width:0}
 .rb-l select{font-family:var(--cell);font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;border:1px solid var(--line);background:var(--paper);padding:9px 6px;width:100%}
@@ -174,11 +229,13 @@ button:disabled{cursor:default}
     <nav class="tabs" role="tablist">
       <button role="tab" id="tab-plan" aria-selected="true" data-tab="plan">Planejamento</button>
       <button role="tab" id="tab-real" aria-selected="false" data-tab="real">Realizado</button>
+      <button role="tab" id="tab-painel" aria-selected="false" data-tab="painel">Painel</button>
     </nav>
     <div id="recHost"></div>
     <section id="view-plan"></section>
     <section id="view-real" hidden></section>
-    <p class="note">Tudo o que você lança é salvo online. Sem sinal, fica guardado no celular e é enviado quando a conexão voltar.</p>
+    <section id="view-painel" hidden></section>
+    <p class="note" id="appNote">Tudo o que você lança é salvo online. Sem sinal, fica guardado no celular e é enviado quando a conexão voltar.</p>
     <div id="confirmBox"></div>
   </div>
 </div>
@@ -591,10 +648,219 @@ $("#btnXlsx").onclick=async()=>{
   }catch(e){if(e&&e.code==="declined")toast("Download cancelado");else toast("Não foi possível gerar a planilha agora.")}
   finally{btn.disabled=false;btn.textContent="Baixar Excel"}
 };
+/* ================= PAINEL DE AVALIAÇÃO ================= */
+/* Requer: $, esc, brl, num, toast e um provedor de dados DP:
+   DP.acoes(ini,fim,vend) -> [{data,valor,venda_tipo,tipo_visita,revenda,cidade,produtos[],atividades[],vendedor_id,vendedor_nome}]
+   DP.visitas(ini,fim,vend) -> [{data,vendedor_id}]
+   DP.getMeta(vend,gran,ini) -> numero|null ;  DP.setMeta(vend,gran,ini,fim,valor|null) -> Promise
+   DP.vendedores() -> [{id,nome}] (vazio = sem filtro de vendedor) ; DP.podeEditarMeta(vend) -> bool */
+const GRANS=[["diario","Diário"],["semanal","Semanal"],["quinzenal","Quinzenal"],["mensal","Mensal"],["bimestral","Bimestral"],["trimestral","Trimestral"],["semestral","Semestral"],["anual","Anual"]];
+const MESES=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+const pad=n=>String(n).padStart(2,"0");
+const iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const parseISO=s=>{const[y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
+const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const lastOfMonth=(y,m)=>new Date(y,m+1,0);
+const dm=d=>pad(d.getDate())+"/"+pad(d.getMonth()+1);
+function periodOf(gran,ref){
+  const y=ref.getFullYear(),m=ref.getMonth();let a,b,label;
+  if(gran==="diario"){a=b=ref;label=ref.toLocaleDateString("pt-BR",{weekday:"long",day:"2-digit",month:"long",year:"numeric"})}
+  else if(gran==="semanal"){const wd=(ref.getDay()+6)%7;a=addDays(ref,-wd);b=addDays(a,6);label="Semana de "+dm(a)+" a "+dm(b)}
+  else if(gran==="quinzenal"){if(ref.getDate()<=15){a=new Date(y,m,1);b=new Date(y,m,15);label="1ª quinzena de "+MESES[m]+"/"+y}else{a=new Date(y,m,16);b=lastOfMonth(y,m);label="2ª quinzena de "+MESES[m]+"/"+y}}
+  else{const span={mensal:1,bimestral:2,trimestral:3,semestral:6,anual:12}[gran];const m0=m-(m%span);a=new Date(y,m0,1);b=lastOfMonth(y,m0+span-1);
+    const nome={mensal:MESES[m0]+"/"+y,bimestral:(m0/2+1)+"º bimestre/"+y,trimestral:(m0/3+1)+"º trimestre/"+y,semestral:(m0/6+1)+"º semestre/"+y,anual:"Ano de "+y}[gran];label=nome.charAt(0).toUpperCase()+nome.slice(1)}
+  return {ini:iso(a),fim:iso(b),label,a,b};
+}
+function bucketsOf(p,gran){
+  const out=[];
+  if(gran==="semestral"||gran==="anual"){let d=new Date(p.a.getFullYear(),p.a.getMonth(),1);while(d<=p.b){const e=lastOfMonth(d.getFullYear(),d.getMonth());out.push({ini:iso(d),fim:iso(e),lab:MESES[d.getMonth()].slice(0,3)});d=new Date(d.getFullYear(),d.getMonth()+1,1)}}
+  else{let d=new Date(p.a);while(d<=p.b){out.push({ini:iso(d),fim:iso(d),lab:dm(d)});d=addDays(d,1)}}
+  return out;
+}
+let PF={gran:"mensal",mes:iso(new Date()).slice(0,7),dia:iso(new Date()),vend:""};
+try{const s=JSON.parse(localStorage.getItem("noxon-painel-filtro")||"null");if(s)PF=Object.assign(PF,s)}catch(e){}
+let PD={acoes:[],visitas:[],meta:null,p:null},metaT=null,painelSeq=0;
+
+function painelRefDate(){
+  const [y,m]=PF.mes.split("-").map(Number);
+  if(["diario","semanal","quinzenal"].includes(PF.gran)){let d=PF.dia?parseISO(PF.dia):new Date(y,m-1,1);if(d.getFullYear()!==y||d.getMonth()!==m-1)d=new Date(y,m-1,1);return d}
+  return new Date(y,m-1,1);
+}
+function renderPainelShell(host,vends){
+  const needDay=["diario","semanal","quinzenal"].includes(PF.gran);
+  const [y,m]=PF.mes.split("-").map(Number);
+  host.innerHTML=`
+  <div class="pf">
+    <label>Avaliação<select id="pfGran">${GRANS.map(([k,l])=>`<option value="${k}" ${k===PF.gran?"selected":""}>${l}</option>`).join("")}</select></label>
+    <label>Mês<input type="month" id="pfMes" value="${PF.mes}"></label>
+    <label ${needDay?"":"hidden"}>Dia de referência<input type="date" id="pfDia" value="${esc(iso(painelRefDate()))}" min="${PF.mes}-01" max="${iso(lastOfMonth(y,m-1))}"></label>
+    ${vends.length?`<label>Vendedor<select id="pfVend"><option value="">Equipe inteira</option>${vends.map(v=>`<option value="${v.id}" ${v.id===PF.vend?"selected":""}>${esc(v.nome)}</option>`).join("")}</select></label>`:""}
+  </div>
+  <div class="bar" id="pfLabel">Carregando…</div>
+  <div class="metaBox">
+    <label class="metaIn"><span>META <small id="metaScope"></small></span>
+      <span class="money big"><span>R$</span><input id="metaVal" inputmode="decimal" placeholder="" autocomplete="off"></span></label>
+    <p class="metaHint" id="metaHint"></p>
+  </div>
+  <div id="pBody"></div>`;
+}
+async function loadPainel(){
+  const seq=++painelSeq;const p=periodOf(PF.gran,painelRefDate());PD.p=p;
+  try{localStorage.setItem("noxon-painel-filtro",JSON.stringify(PF))}catch(e){}
+  $("#pfLabel").innerHTML=["diario","semanal"].includes(PF.gran)?esc(p.label.charAt(0).toUpperCase()+p.label.slice(1)):`${esc(p.label)} <small>${dm(p.a)} – ${dm(p.b)}/${p.b.getFullYear()}</small>`;
+  const [acoes,visitas,meta]=await Promise.all([DP.acoes(p.ini,p.fim,PF.vend),DP.visitas(p.ini,p.fim,PF.vend),DP.getMeta(PF.vend||null,PF.gran,p.ini)]);
+  if(seq!==painelSeq)return;
+  PD.acoes=acoes;PD.visitas=visitas;PD.meta=meta;
+  const mi=$("#metaVal");if(document.activeElement!==mi)mi.value=meta==null?"":String(meta).replace(".",",");
+  const vn=PF.vend?(DP.vendedores().find(v=>v.id===PF.vend)||{}).nome:"";
+  $("#metaScope").textContent=PF.vend?"· "+(vn||"vendedor"):(DP.vendedores().length?"· equipe":"");
+  const pode=DP.podeEditarMeta(PF.vend||null);mi.disabled=!pode;
+  $("#metaHint").textContent=pode?`Meta de vendas para ${p.label.toLowerCase()}. Digite o valor; é salvo automaticamente.`:"Meta definida pelo gestor.";
+  renderPainelBody();
+}
+function paceInfo(p){
+  const hoje=parseISO(iso(new Date()));const tot=Math.round((p.b-p.a)/864e5)+1;
+  let dec=Math.round((hoje-p.a)/864e5)+1;dec=Math.max(0,Math.min(tot,dec));
+  return {tot,dec,rest:tot-dec+(dec>0&&dec<=tot&&hoje<=p.b?1:0),esperado:dec/tot};
+}
+function renderPainelBody(){
+  const {acoes,visitas,p}=PD;const meta=PD.meta;
+  const vendido=acoes.reduce((s,a)=>s+(+a.valor||0),0);
+  const comValor=acoes.filter(a=>+a.valor>0);
+  const pct=meta>0?vendido/meta:null;const falta=meta>0?Math.max(meta-vendido,0):null;
+  const pace=paceInfo(p);
+  let status="";
+  if(meta>0){
+    if(pct>=1)status=`<span class="st good">✔ Meta atingida</span>`;
+    else if(pace.dec===0)status=`<span class="st neutral">Período ainda não começou</span>`;
+    else if(iso(new Date())>p.fim)status=`<span class="st crit">✖ Período encerrado abaixo da meta</span>`;
+    else if(pct>=pace.esperado)status=`<span class="st good">▲ No ritmo da meta</span>`;
+    else if(pct>=pace.esperado*0.8)status=`<span class="st warn">● Atenção ao ritmo</span>`;
+    else status=`<span class="st crit">▼ Abaixo do ritmo</span>`;
+  }
+  const porDia=meta>0&&falta>0&&pace.dec>=1&&pace.rest>0&&iso(new Date())<=p.fim?falta/pace.rest:null;
+  const nCampo=acoes.filter(a=>a.tipo_visita==="campo").length,nRev=acoes.length-nCampo;
+  const nPT=acoes.filter(a=>a.venda_tipo==="PT").length;
+  const ader=visitas.length?acoes.length/visitas.length:null;
+  const fill=Math.min(pct||0,1)*100,expMark=Math.min(pace.esperado,1)*100;
+  let h=`<div class="kpis">
+    <div class="kpi wide"><dt>Vendido no período</dt><dd>${brl(vendido)}</dd><small>${comValor.length} venda${comValor.length===1?"":"s"} com valor lançado</small></div>
+    <div class="kpi"><dt>% da meta atingido</dt><dd>${pct==null?"—":(pct*100).toLocaleString("pt-BR",{maximumFractionDigits:1})+"%"}</dd></div>
+    <div class="kpi"><dt>${pct!=null&&pct>=1?"Superou a meta em":"Falta para a meta"}</dt><dd>${meta>0?brl(pct>=1?vendido-meta:falta):"—"}</dd></div>
+    <div class="kpi wide prog">
+      <div class="track" role="img" aria-label="${pct==null?"Sem meta definida":"Atingido "+Math.round(pct*100)+"% da meta"}"><div class="fill" style="width:${fill}%"></div>${meta>0&&pace.dec>0&&pace.dec<pace.tot?`<div class="exp" style="left:${expMark}%" title="Esperado até hoje"></div>`:""}</div>
+      <div class="progLeg"><span>R$ 0</span>${meta>0?`<span>Meta ${brl(meta)}</span>`:`<span>Digite a META acima para acompanhar</span>`}</div>
+      ${status?`<div class="stRow">${status}${porDia?`<span class="perday">Necessário ${brl(porDia)} por dia até ${dm(p.b)}</span>`:""}</div>`:""}
+    </div>
+  </div>
+  <div class="kpis small">
+    <div class="kpi"><dt>Ações realizadas</dt><dd>${acoes.length}</dd></div>
+    <div class="kpi"><dt>Visitas planejadas</dt><dd>${visitas.length}</dd></div>
+    <div class="kpi"><dt>Visitas a campo</dt><dd>${nCampo}</dd></div>
+    <div class="kpi"><dt>Visitas a revendas</dt><dd>${nRev}</dd></div>
+    <div class="kpi"><dt>Pedidos transferidos (PT)</dt><dd>${nPT}</dd></div>
+    <div class="kpi"><dt>Ticket médio</dt><dd>${comValor.length?brl(vendido/comValor.length):"—"}</dd></div>
+    <div class="kpi wide"><dt>Aderência ao planejamento</dt><dd>${ader==null?"—":Math.round(ader*100)+"%"}</dd><small>ações realizadas ÷ visitas planejadas no período</small></div>
+  </div>`;
+  if(PF.gran!=="diario")h+=`<div class="bar">Vendas acumuladas × meta</div><div class="chart" id="cumChart"></div>`;
+  const rank=(title,rows,fmt,note)=>{
+    if(!rows.length)return `<div class="bar">${title}</div><div class="empty">Nenhum lançamento no período.</div>`;
+    const max=Math.max(...rows.map(r=>r[1]))||1;
+    return `<div class="bar">${title}${note?` <small>${note}</small>`:""}</div><div class="rank" role="table">${rows.map(([k,v])=>`<div class="rk" role="row" title="${esc(k)}: ${esc(fmt(v))}"><span class="rkL" role="cell">${esc(k)}</span><span class="rkB" role="cell"><i style="width:${Math.max(v/max*100,1.5)}%"></i></span><span class="rkV" role="cell">${esc(fmt(v))}</span></div>`).join("")}</div>`;
+  };
+  const sumBy=(fn,val)=>{const m=new Map();acoes.forEach(a=>[].concat(fn(a)).forEach(k=>{if(!k)return;m.set(k,(m.get(k)||0)+val(a))}));return [...m.entries()].sort((a,b)=>b[1]-a[1])};
+  const cntF=v=>v===1?"1 ação":v+" ações";
+  if(DP.vendedores().length&&!PF.vend)h+=rank("Vendas por vendedor",sumBy(a=>a.vendedor_nome||"—",a=>+a.valor||0).slice(0,12),brl);
+  h+=rank("Vendas por revenda / cliente",sumBy(a=>a.revenda?(a.revenda+(a.cidade?" / "+a.cidade:"")):"",a=>+a.valor||0).filter(r=>r[1]>0).slice(0,10),brl);
+  h+=rank("Produtos mais trabalhados",sumBy(a=>a.produtos||[],()=>1).slice(0,10),cntF,"nº de ações que citaram o produto");
+  h+=rank("Atividades realizadas",sumBy(a=>a.atividades||[],()=>1).slice(0,10),cntF);
+  const tipos=[["C","Cliente (C)"],["B","Balcão (B)"],["PT","Pedido transferido (PT)"]].map(([k,l])=>[l,acoes.filter(a=>a.venda_tipo===k).reduce((s,a)=>s+(+a.valor||0),0)]).filter(r=>r[1]>0);
+  h+=rank("Vendas por tipo",tipos,brl);
+  $("#pBody").innerHTML=h;
+  if(PF.gran!=="diario")drawCum();
+}
+function drawCum(){
+  const host=$("#cumChart");if(!host)return;const {acoes,p}=PD;const meta=PD.meta;
+  const bs=bucketsOf(p,PF.gran);let acc=0;const hoje=iso(new Date());
+  const pts=bs.map(b=>{const v=acoes.filter(a=>a.data>=b.ini&&a.data<=b.fim).reduce((s,a)=>s+(+a.valor||0),0);acc+=v;return {lab:b.lab,v,acc,fut:b.ini>hoje}});
+  const W=Math.max(300,Math.round(host.clientWidth-16)),H=220,L=58,R=12,T=18,B=26;
+  const maxY=Math.max(acc,meta||0,1)*1.08;
+  const step=(()=>{const raw=maxY/4,p10=Math.pow(10,Math.floor(Math.log10(raw)));return [1,2,2.5,5,10].map(m=>m*p10).find(s=>s>=raw)})();
+  const x=i=>L+(pts.length===1?(W-L-R)/2:i*(W-L-R)/(pts.length-1)),y=v=>T+(H-T-B)*(1-v/(step*Math.ceil(maxY/step)));
+  const top=step*Math.ceil(maxY/step);
+  let g="";for(let v=0;v<=top+1e-9;v+=step)g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" class="grid"/><text x="${L-6}" y="${y(v)+4}" class="ax" text-anchor="end">${v>=1000?(v/1000).toLocaleString("pt-BR")+" mil":v}</text>`;
+  const every=Math.ceil(pts.length/Math.max(3,Math.floor((W-L-R)/58)));const last=pts.length-1;
+  pts.forEach((pt,i)=>{if((i%every===0&&(i===last||last-i>=every*0.6))||i===last)g+=`<text x="${x(i)}" y="${H-8}" class="ax" text-anchor="${i===last&&last>0?"end":i===0&&last>0?"start":"middle"}">${pt.lab}</text>`});
+  const real=pts.filter(pt=>!pt.fut);
+  const path=real.map((pt,i)=>(i?"L":"M")+x(i).toFixed(1)+","+y(pt.acc).toFixed(1)).join("");
+  const area=real.length?path+`L${x(real.length-1).toFixed(1)},${y(0)}L${x(0).toFixed(1)},${y(0)}Z`:"";
+  let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Vendas acumuladas no período${meta>0?" comparadas à meta de "+brl(meta):""}">${g}`;
+  if(meta>0)svg+=`<line x1="${L}" x2="${W-R}" y1="${y(meta)}" y2="${y(meta)}" class="metaLine"/><text x="${W-R}" y="${y(meta)-6}" text-anchor="end" class="metaLab">Meta ${brl(meta)}</text>`;
+  if(real.length)svg+=`<path d="${area}" class="area"/><path d="${path}" class="line"/><circle cx="${x(real.length-1)}" cy="${y(real[real.length-1].acc)}" r="4.5" class="end"/>`;
+  svg+=`<line id="cx" class="cross" y1="${T}" y2="${H-B}" x1="-10" x2="-10"/><rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent" id="hit"/></svg><div class="tip" id="tip" hidden></div>`;
+  host.innerHTML=svg+`<p class="legend">Linha: total vendido acumulado${meta>0?" · tracejado: meta":""}.</p>`;
+  const s=host.querySelector("svg"),tip=host.querySelector("#tip"),cx=host.querySelector("#cx");
+  const move=ev=>{const r=s.getBoundingClientRect();const px=(ev.clientX-r.left)/r.width*W;let i=Math.round((px-L)/((W-L-R)/Math.max(pts.length-1,1)));i=Math.max(0,Math.min(pts.length-1,i));const pt=pts[i];
+    cx.setAttribute("x1",x(i));cx.setAttribute("x2",x(i));tip.hidden=false;
+    tip.innerHTML=`<b>${pt.lab}</b><br>No dia/mês: ${brl(pt.v)}<br>Acumulado: ${pt.fut?"—":brl(pt.acc)}${meta>0&&!pt.fut?`<br>${Math.round(pt.acc/meta*100)}% da meta`:""}`;
+    const left=x(i)/W*r.width;tip.style.left=Math.min(Math.max(left-70,0),r.width-150)+"px"};
+  s.addEventListener("pointermove",move);s.addEventListener("pointerdown",move);s.addEventListener("pointerleave",()=>{tip.hidden=true;cx.setAttribute("x1",-10);cx.setAttribute("x2",-10)});
+}
+async function openPainel(host){
+  renderPainelShell(host,DP.vendedores());
+  host.onchange=e=>{const t=e.target;
+    if(t.id==="pfGran"){PF.gran=t.value;renderPainelShell(host,DP.vendedores());loadPainel()}
+    else if(t.id==="pfMes"){if(!t.value)return;PF.mes=t.value;PF.dia=t.value+"-01";renderPainelShell(host,DP.vendedores());loadPainel()}
+    else if(t.id==="pfDia"){PF.dia=t.value;loadPainel()}
+    else if(t.id==="pfVend"){PF.vend=t.value;loadPainel()}};
+  host.oninput=e=>{if(e.target.id!=="metaVal")return;
+    const raw=e.target.value.trim();const v=raw===""?null:num(raw);PD.meta=v;renderPainelBody();
+    clearTimeout(metaT);const p=PD.p,gran=PF.gran,vend=PF.vend||null;
+    metaT=setTimeout(async()=>{try{await DP.setMeta(vend,gran,p.ini,p.fim,v);toast(v==null?"Meta removida":"Meta salva")}catch(err){toast("Não foi possível salvar a meta: "+(err.message||err))}},800)};
+  await loadPainel();
+}
+
+/* ---------- Provedor de dados do Painel (API Supabase) ---------- */
+const DP={
+  async acoes(ini,fim,vend){
+    if(!isGestor())vend=me.id;
+    let q=sb.from("v_acoes").select("data,valor,venda_tipo,tipo_visita,revenda,cidade,produtos,atividades,vendedor_id,vendedor_nome").gte("data",ini).lte("data",fim);
+    if(vend)q=q.eq("vendedor_id",vend);
+    const {data,error}=await q;if(error){toast("Erro ao carregar vendas: "+error.message);return[]}return data||[];
+  },
+  async visitas(ini,fim,vend){
+    if(!isGestor())vend=me.id;
+    let q=sb.from("visitas_planejadas").select("data,vendedor_id").gte("data",ini).lte("data",fim);
+    if(vend)q=q.eq("vendedor_id",vend);
+    const {data}=await q;return data||[];
+  },
+  async getMeta(vend,gran,ini){
+    if(!isGestor())vend=me.id;
+    let q=sb.from("metas").select("id,valor").eq("granularidade",gran).eq("inicio",ini);
+    q=vend?q.eq("vendedor_id",vend):q.is("vendedor_id",null);
+    const {data}=await q;const m=(data||[])[0];return m?+m.valor:null;
+  },
+  async setMeta(vend,gran,ini,fim,valor){
+    if(!isGestor())vend=me.id;
+    let q=sb.from("metas").select("id").eq("granularidade",gran).eq("inicio",ini);
+    q=vend?q.eq("vendedor_id",vend):q.is("vendedor_id",null);
+    const {data,error:e1}=await q;if(e1)throw e1;const ex=(data||[])[0];
+    let r;
+    if(valor==null){if(ex)r=await sb.from("metas").delete().eq("id",ex.id)}
+    else if(ex)r=await sb.from("metas").update({valor,fim}).eq("id",ex.id);
+    else r=await sb.from("metas").insert({vendedor_id:vend,granularidade:gran,inicio:ini,fim,valor});
+    if(r&&r.error)throw r.error;
+  },
+  vendedores(){return isGestor()?vendedores.map(v=>({id:v.id,nome:v.nome||v.email})):[]},
+  podeEditarMeta(vend){return isGestor()||true}
+};
+
 /* ---------- Render geral ---------- */
 function render(){
   document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===tab));
-  $("#view-plan").hidden=tab!=="plan";$("#view-real").hidden=tab!=="real";
+  $("#view-plan").hidden=tab!=="plan";$("#view-real").hidden=tab!=="real";$("#view-painel").hidden=tab!=="painel";
+  $(".actions").hidden=tab==="painel";$("#recHost").hidden=tab==="painel";$("#appNote").hidden=tab==="painel";
+  if(tab==="painel"){$("#docTitle").textContent="PAINEL DE AVALIAÇÃO";$("#docSub").textContent=isGestor()?"Equipe de campo":(me.nome||"");openPainel($("#view-painel"));return}
   $("#docTitle").textContent=tab==="plan"?"PLANEJAMENTO SEMANAL":"COMUNICADO SEMANAL DE AÇÕES";
   $("#docSub").textContent=(S.colab?S.colab+" · ":"")+(tab==="plan"?(S.periodo||"período a definir"):(S.mes||"mês a definir"));
   $("#recHost").innerHTML=recordBar();
